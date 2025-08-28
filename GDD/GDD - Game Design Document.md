@@ -20,8 +20,6 @@ Para a implementação desta mecânica, será feito uso de classes, e para f
 
 A classe *Entity* também irá possuir uma variável do tipo bool com o nome isPlayable, que servirá para verificar se aquela entidade é jogável ou inimigo. Todas as entidades em combate serão um "objeto" (Nó) da classe *Entity*.
 
-![[EntityClass.png]]
-
 ## Ações
 ### O quê?
 Se tratam das ações que cada entidade consegue executar durante combate. Todas as entidades possuem 3 ações, duas universais e uma única para cada entidade. As ações universais são Atacar e Defender. Segue uma lista descrevendo cada ação:
@@ -61,3 +59,42 @@ Pois o jogo necessita de um estado final, assim como qualquer outro jogo, e nest
 A implementação será parecida com a implementação do avanço de turno, onde todas as Ações que dão dano em uma entidade irão possuir um Signal, este signal irá ativar uma função em um nó chamado *State Manager*, que servirá para verificar o estado do jogo como um todo, verificando quais personagens estão abatidos e se o jogo pode ser encerrado com um estado de falha, vitória, ou se pode seguir normalmente. Quando este nó definir um estado de vitória ou falha, o mesmo deleta o nó gerenciador de turnos para previnir um avanço de turnos, e o Signal que este recebe sempre ocorre antes do Signal referente a ações como um todo que avança os turnos.
 
 Quando o State Manager definir que o jogador entrou em falha, e caso o jogador escolha tentar novamente, o mesmo irá recarregar a cena da batalha, efetivamente reiniciando o jogo.
+
+# Visuais
+--- 
+Esta seção do GDD visa falar sobre os assets visuais do jogo, a aparência e estilo esperados, além de quando animações e efeitos devem aparecer durante a gameplay. Parte importante desta parte é mencionar que o jogo é 3D, tanto personagens quanto cenários.
+
+O estilo geral do jogo será relativamente simplista. Cores simples, sem muita textura, iluminação simples e personagens criados com cubos, estilo *Voxel*. Isso sendo um estilo muito bom para protótipos, tendo em vista a agilidade de criar um modelo neste estilo. 
+
+## Cenário
+O cenário será uma pequena ilha, com algumas pequenas montanhas, rochas e árvores para decorar o ambiente. Os assets para o cenário serão todos coletados do website Kenney, que oferece assets gratuitos para uso tanto comercial quanto não comercial.
+
+O cenário possui animação apenas na água, a qual será feita via sistema de shaders da engine.
+
+## Personagens
+Como mencionado anteriormente, os personagens serão feitos com voxels. Utilizando de poucas formas retangulares com cores simples para sua composicão. Para facilidade de animação e por escolha estilista, os personagens serão compostos de um corpo, mãos e uma cabeça. Não será modelado braços ou pescoço para conectar. Além disso cada personagem terá sua arma.
+
+Um dos personagens será um mago. Seu corpo será uma roupa roxa, em sua cabeça o mesmo terá um chapéu de bruxa. O mago terá um cajado como uma pedra roxa como sua arma. Outro personagem é um cavalheiro, seu corpo deverá dar uma ideia de armadura, com um cinto perto da cintura, e em sua cabeça uma armadura de malha, com o mesmo utilizando uma espada em sua mão. Por fim temos o curandeiro, o qual utiliza uma roupa branca e possui cabelo um pouco mais longo, loiro. Sua arma é um livro branco com detalhes amarelos.
+
+Os personagens inimigos serão um morcego e dois "poms". Poms são criaturas que parecem uma nuvem com um rosto, e com orelhas de gato.
+
+Os personagens possuem algumas poucas animações. A primeira será uma animação *Idle*, a animação que executam durante a batalha enquanto estiverem ativos. Quando estes personagens forem abatidos, transicionam para a animação de morte. A animação idle será simples, para os humanos jogáveis, estes irão apenas mover um pouco para baixo e para cima. Já para os inimigos, o morcego estará batendo suas asas, já os poms estarão pulando. Para a animação de morte, todos estes cairão no chão e ficarão estáticos pelo resto do jogo.
+
+## Animações de ataque
+Sempre que um ataque ocorrer, toda a animação será lidada via particulas que irão aparecer próximas ao alvo para representar o mesmo recebendo um ataque. Para ataques normais serão parecidas com faíscas brancas. Para o ataque Magia. serão partículas maiores e roxas. Para o ataque carregado serão várias particulas brancas sendo geradas de uma vez, parecido com a animação do ataque normal, mas de forma mais impactante.
+
+## Menus/GUI
+Os menus devem ser simples e claros, com cada cor para cada botão. Ataque normal deve ter um botão vermelho, magia um botão roxo, defesa um botão azul, curar um botão amarelo bem claro, distrair um botão verde.
+
+No canto superior esquerdo da tela, barras de progresso que representam a saúde de cada personagem jogável estarão abaixo do nome do personagem. No canto inferior direito, o mesmo mas para os inimigos. Quando um for abatido, um ícone de caveira deverá aparecer próximo a sua barra de saúde.
+
+O menu no estado de falha deve deixar a tela avermelhada, mostrar o texto "You lost", com um botão azul, para contraste, que o jogador pode clicar para tentar novamente, com um símbolo e o texto "Retry". Já a tela de vitória deve deixar toda a tela esverdeada, com o texto "You won".
+
+Por fim, todos os botões do jogo devem ter sua cor levemente escurecida quando selecionados para indicar onde o cursor está no momento. A navegação de menus será feita via teclado ou controle, permitindo o jogador trocar entre botões com cima ou baixo e selecionar o botão com um botão do controle ou do teclado.
+
+# Áudio
+---
+O jogo possuirá uma música de fundo que tocará durante toda a batalha. A mesma deverá reiniciar e ficar em loop durante toda a batalha caso termine ou caso o jogador clique em tentar novamente.
+
+Além disso, ataques devem ter um aúdio sempre que ocorrerem, junto das partículas geradas quando um ataque ocorrer, para ajudar com o impacto dos ataques, porém aqui será o mesmo áudio para todos os ataques, será um efeito sonoro de impacto. 
+Por fim, selecionar algo em um menu deverá ter um efeito sonoro para auxiliar no feedback do jogador quando clicar em algo.
