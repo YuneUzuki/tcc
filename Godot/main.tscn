@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://ree1xe7uofci"]
+
+[ext_resource type="Shader" uid="uid://fstatj4hnhld" path="res://shaders/water.gdshader" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_top_color = Color(0.345098, 0.662745, 1, 1)
+sky_horizon_color = Color(0.584314, 0.886275, 1, 1)
+ground_bottom_color = Color(0.584314, 0.886275, 1, 1)
+ground_horizon_color = Color(0.584314, 0.886275, 1, 1)
+ground_curve = 0.331
+energy_multiplier = 0.15
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.004
+volumetric_fog_albedo = Color(0.658824, 0.592157, 1, 1)
+volumetric_fog_emission = Color(0.345098, 0.662745, 1, 1)
+volumetric_fog_emission_energy = 0.65
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_anisotropy = 0.0
+volumetric_fog_length = 1024.0
+volumetric_fog_detail_spread = 3.69
+volumetric_fog_ambient_inject = 16.0
+volumetric_fog_sky_affect = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+render_priority = 0
+shader = ExtResource("1_ig7tw")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 3.815
+shader_parameter/tile = Vector2(1000, 1000)
+shader_parameter/height = 2.0
+shader_parameter/wave_size = Vector2(5, 5)
+shader_parameter/wave_speed = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h2yge"]
+material = SubResource("ShaderMaterial_0xm2m")
+top_radius = 1000.0
+
+[node name="Main" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Water" type="MeshInstance3D" parent="Environment"]
+mesh = SubResource("CylinderMesh_h2yge")
