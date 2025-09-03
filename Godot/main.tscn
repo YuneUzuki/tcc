@@ -172,114 +172,124 @@ transform = Transform3D(0.619816, 0, 2.72039, 0, 4.98923, 0, -2.39097, 0, 0.7052
 mesh = ExtResource("2_7gflm")
 skeleton = NodePath("../../..")
 
-[node name="Trees" type="Node" parent="Background"]
-
-[node name="Tree-pine6" type="MeshInstance3D" parent="Background/Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49347, 2.51862, 1.15543)
-mesh = ExtResource("3_s7qns")
-skeleton = NodePath("../../..")
-
-[node name="Tree-pine" type="MeshInstance3D" parent="Background/Trees"]
-transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 5.48261, 2.48189, -0.796023)
-mesh = ExtResource("3_s7qns")
-skeleton = NodePath("../../..")
-
-[node name="Tree-pine2" type="MeshInstance3D" parent="Background/Trees"]
-transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, -2.93827, 2.48189, -3.71812)
-mesh = ExtResource("3_s7qns")
-skeleton = NodePath("../../..")
-
-[node name="Tree-pine3" type="MeshInstance3D" parent="Background/Trees"]
-transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 5.13275, 5.03454, -4.11275)
-mesh = ExtResource("3_s7qns")
-skeleton = NodePath("../../..")
-
-[node name="Tree-pine4" type="MeshInstance3D" parent="Background/Trees"]
-transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 1.15118, 5.03454, -8.404)
-mesh = ExtResource("3_s7qns")
-skeleton = NodePath("../../..")
-
-[node name="Tree-pine5" type="MeshInstance3D" parent="Background/Trees"]
-transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 3.45104, 5.03454, -7.71474)
-mesh = ExtResource("3_s7qns")
-skeleton = NodePath("../../..")
-
 [node name="Decoration" type="Node" parent="Background"]
 
-[node name="Rocks" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Trees" type="Node" parent="Background/Decoration"]
+
+[node name="Tree-pine6" type="MeshInstance3D" parent="Background/Decoration/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49347, 2.51862, 1.15543)
+mesh = ExtResource("3_s7qns")
+skeleton = NodePath("../../../..")
+
+[node name="Tree-pine" type="MeshInstance3D" parent="Background/Decoration/Trees"]
+transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 5.48261, 2.48189, -0.796023)
+mesh = ExtResource("3_s7qns")
+skeleton = NodePath("../../../..")
+
+[node name="Tree-pine2" type="MeshInstance3D" parent="Background/Decoration/Trees"]
+transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, -2.93827, 2.48189, -3.71812)
+mesh = ExtResource("3_s7qns")
+skeleton = NodePath("../../../..")
+
+[node name="Tree-pine3" type="MeshInstance3D" parent="Background/Decoration/Trees"]
+transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 5.13275, 5.03454, -4.11275)
+mesh = ExtResource("3_s7qns")
+skeleton = NodePath("../../../..")
+
+[node name="Tree-pine4" type="MeshInstance3D" parent="Background/Decoration/Trees"]
+transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 1.15118, 5.03454, -8.404)
+mesh = ExtResource("3_s7qns")
+skeleton = NodePath("../../../..")
+
+[node name="Tree-pine5" type="MeshInstance3D" parent="Background/Decoration/Trees"]
+transform = Transform3D(1.805, 0, 0, 0, 1.805, 0, 0, 0, 1.805, 3.45104, 5.03454, -7.71474)
+mesh = ExtResource("3_s7qns")
+skeleton = NodePath("../../../..")
+
+[node name="Rocks" type="Node" parent="Background/Decoration"]
+
+[node name="Rocks" type="MeshInstance3D" parent="Background/Decoration/Rocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51069, 2.45603, -1.94981)
 mesh = ExtResource("4_1htba")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Rocks2" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Rocks2" type="MeshInstance3D" parent="Background/Decoration/Rocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48677, 2.56348, -0.025502)
 mesh = ExtResource("4_1htba")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Rocks3" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Rocks3" type="MeshInstance3D" parent="Background/Decoration/Rocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435052, 2.63346, 2.50522)
 mesh = ExtResource("4_1htba")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Plant" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Plants" type="Node" parent="Background/Decoration"]
+
+[node name="Plant" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(0.884736, 0, 0.466093, 0, 1, 0, -0.466093, 0, 0.884736, -1.77819, 2.5651, -2.34273)
 mesh = ExtResource("5_25qor")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Plant2" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Plant2" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(0.884736, 0, 0.466093, 0, 1, 0, -0.466093, 0, 0.884736, -3.11388, 2.5651, 0.567389)
 mesh = ExtResource("5_25qor")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Plant3" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Plant3" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(0.884736, 0, 0.466093, 0, 1, 0, -0.466093, 0, 0.884736, -2.68191, 2.5651, 1.1213)
 mesh = ExtResource("5_25qor")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Plant4" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Plant4" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(0.884736, 0, 0.466093, 0, 1, 0, -0.466093, 0, 0.884736, 1.12795, 2.5651, 1.84026)
 mesh = ExtResource("5_25qor")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Plant5" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Plant5" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(0.884736, 0, 0.466093, 0, 1, 0, -0.466093, 0, 0.884736, 2.349, 2.5651, -0.948267)
 mesh = ExtResource("5_25qor")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Chest" type="MeshInstance3D" parent="Background/Decoration"]
-transform = Transform3D(1.44828, 0, 0.279472, 0, 1.475, 0, -0.279472, 0, 1.44828, -0.660008, 2.62595, -4.90802)
-mesh = ExtResource("6_4scyh")
-skeleton = NodePath("../..")
-
-[node name="Chest2" type="MeshInstance3D" parent="Background/Decoration"]
-transform = Transform3D(0.406862, 0, -1.41778, 0, 1.475, 0, 1.41778, 0, 0.406862, 4.4643, 2.57614, -0.180382)
-mesh = ExtResource("6_4scyh")
-skeleton = NodePath("../..")
-
-[node name="Ladder" type="MeshInstance3D" parent="Background/Decoration"]
-transform = Transform3D(1, 0, 0, 0, 1.24494, 0.22095, 0, -0.265778, 1.03496, 1.66222, 2.55895, -4.58693)
-mesh = ExtResource("7_26n37")
-skeleton = NodePath("../../..")
-
-[node name="Ladder2" type="MeshInstance3D" parent="Background/Decoration"]
-transform = Transform3D(1, 0, 0, 0, 1.24494, 0.22095, 0, -0.265778, 1.03496, 1.66222, 3.69191, -4.82979)
-mesh = ExtResource("7_26n37")
-skeleton = NodePath("../../..")
-
-[node name="Flowers-tall" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Flowers-tall" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94188, 2.44457, -0.693021)
 mesh = ExtResource("8_ukmpv")
-skeleton = NodePath("../../../Environment")
+skeleton = NodePath("../../../../Environment")
 
-[node name="Flowers-tall2" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Flowers-tall2" type="MeshInstance3D" parent="Background/Decoration/Plants"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53677, 2.44457, -2.11658)
 mesh = ExtResource("8_ukmpv")
+skeleton = NodePath("../..")
 
-[node name="Fence-straight" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Chests" type="Node" parent="Background/Decoration"]
+
+[node name="Chest" type="MeshInstance3D" parent="Background/Decoration/Chests"]
+transform = Transform3D(1.44828, 0, 0.279472, 0, 1.475, 0, -0.279472, 0, 1.44828, -0.660008, 2.62595, -4.90802)
+mesh = ExtResource("6_4scyh")
+skeleton = NodePath("../../..")
+
+[node name="Chest2" type="MeshInstance3D" parent="Background/Decoration/Chests"]
+transform = Transform3D(0.406862, 0, -1.41778, 0, 1.475, 0, 1.41778, 0, 0.406862, 4.4643, 2.57614, -0.180382)
+mesh = ExtResource("6_4scyh")
+skeleton = NodePath("../../..")
+
+[node name="Structures" type="Node" parent="Background/Decoration"]
+
+[node name="Ladder" type="MeshInstance3D" parent="Background/Decoration/Structures"]
+transform = Transform3D(1, 0, 0, 0, 1.24494, 0.22095, 0, -0.265778, 1.03496, 1.66222, 2.55895, -4.58693)
+mesh = ExtResource("7_26n37")
+skeleton = NodePath("../../../..")
+
+[node name="Ladder2" type="MeshInstance3D" parent="Background/Decoration/Structures"]
+transform = Transform3D(1, 0, 0, 0, 1.24494, 0.22095, 0, -0.265778, 1.03496, 1.66222, 3.69191, -4.82979)
+mesh = ExtResource("7_26n37")
+skeleton = NodePath("../../../..")
+
+[node name="Fence-straight" type="MeshInstance3D" parent="Background/Decoration/Structures"]
 transform = Transform3D(0.67097, 0, -0.741484, 0, 1, 0, 0.741484, 0, 0.67097, 3.53368, 2.56657, -2.83212)
 mesh = ExtResource("9_uoad0")
-skeleton = NodePath("../../../Environment")
+skeleton = NodePath("../../../../Environment")
 
-[node name="Fence-straight2" type="MeshInstance3D" parent="Background/Decoration"]
+[node name="Fence-straight2" type="MeshInstance3D" parent="Background/Decoration/Structures"]
 transform = Transform3D(0.928265, 0, 0.371919, 0, 1, 0, -0.371919, 0, 0.928265, -2.59652, 2.56657, -4.81875)
 mesh = ExtResource("9_uoad0")
+skeleton = NodePath("../..")
