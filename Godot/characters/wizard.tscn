@@ -1,3 +1,182 @@
-[gd_scene format=3 uid="uid://p5g81uiw0h20"]
+[gd_scene load_steps=22 format=3 uid="uid://p5g81uiw0h20"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_0r8g4"]
+[ext_resource type="PackedScene" uid="uid://gtcglow23y35" path="res://actions/attack.tscn" id="2_yrd1a"]
+[ext_resource type="PackedScene" uid="uid://dmlj7yu53ob86" path="res://actions/defend.tscn" id="3_c01r2"]
+[ext_resource type="PackedScene" uid="uid://t3g5mc01ig75" path="res://actions/magic.tscn" id="4_uoai3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gawur"]
+albedo_color = Color(1, 0.784314, 0.631373, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2186"]
+albedo_color = Color(0.357, 0, 0.51, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbyfy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt1lm"]
+albedo_color = Color(0.356863, 0, 0.509804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cemgp"]
+albedo_color = Color(0.356863, 0, 0.509804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wi70"]
+albedo_color = Color(0.356863, 0, 0.509804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqj65"]
+albedo_color = Color(1, 0.94, 0.6, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pi71w"]
+albedo_color = Color(0.65098, 0.45098, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2aiad"]
+albedo_color = Color(0.65098, 0.45098, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5ix2"]
+albedo_color = Color(0.422213, 0.2556, 0.71, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qkdm"]
+albedo_color = Color(0.651667, 0.45, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pi4v"]
+albedo_color = Color(1, 0.784167, 0.63, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a1fw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yb5s"]
+albedo_color = Color(0.49, 0.284935, 0.0343, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdefy"]
+albedo_color = Color(0.687462, 0.000609913, 0.738368, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjgsk"]
+albedo_color = Color(1, 0.784314, 0.631373, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwly5"]
 
 [node name="Wizard" type="Node3D"]
+script = ExtResource("1_0r8g4")
+_entity_id = "wizard"
+_attack = 10
+_defense = 4
+_max_health = 35
+_health = 35
+_is_playable = true
+
+[node name="Skin" type="Node3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Head" type="CSGCombiner3D" parent="Skin"]
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0.0124929, 3.10223, 0)
+size = Vector3(1.0752, 0.552368, 0.999756)
+material = SubResource("StandardMaterial3D_gawur")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0.0124929, 3.30748, 0)
+size = Vector3(1.56934, 0.155653, 1.97656)
+material = SubResource("StandardMaterial3D_a2186")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0.0124929, 3.57303, 0)
+size = Vector3(1.2666, 0.335354, 1.31641)
+material = SubResource("StandardMaterial3D_cbyfy")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0.0124929, 4.0193, 0)
+size = Vector3(0.878906, 0.489943, 0.933594)
+material = SubResource("StandardMaterial3D_wt1lm")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, -0.193249, 4.51224, 0)
+size = Vector3(0.629883, 0.489943, 0.532227)
+material = SubResource("StandardMaterial3D_cemgp")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, -0.721152, 4.51224, 0)
+size = Vector3(0.508789, 0.316406, 0.34082)
+material = SubResource("StandardMaterial3D_4wi70")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Skin/Head"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0.596173, 3.57303, 0)
+size = Vector3(0.25415, 0.39624, 0.541016)
+material = SubResource("StandardMaterial3D_cqj65")
+
+[node name="Body" type="CSGCombiner3D" parent="Skin"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Skin/Body"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0, 1.44908, 0)
+material = SubResource("StandardMaterial3D_pi71w")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Skin/Body"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0, 0.726995, 0)
+size = Vector3(1.2, 0.807129, 1.2)
+material = SubResource("StandardMaterial3D_2aiad")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Skin/Body"]
+transform = Transform3D(1, 0, 0, 0, 1.33447, 0, 0, 0, 1, 0, 0.136408, 0)
+size = Vector3(1.4, 0.42227, 1.4)
+material = SubResource("StandardMaterial3D_e5ix2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Skin/Body"]
+transform = Transform3D(1, 0, 0, 0, 1.51492, 0, 0, 0, 1, 0, 2.14136, 0)
+size = Vector3(1.1, 0.218, 1.1)
+material = SubResource("StandardMaterial3D_6qkdm")
+
+[node name="Right Hand" type="CSGCombiner3D" parent="Skin"]
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Skin/Right Hand"]
+transform = Transform3D(1, 5.84311e-09, 1.59009e-09, -4.65178e-09, 1.27681, 0.290769, -2.48227e-10, -0.388021, 0.956793, 0, 1.192, 1.212)
+size = Vector3(0.381104, 0.381592, 0.464355)
+material = SubResource("StandardMaterial3D_3pi4v")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Skin/Right Hand"]
+transform = Transform3D(1, 5.84311e-09, 1.59009e-09, -4.65178e-09, 1.27681, 0.290769, -2.48227e-10, -0.388021, 0.956793, 0, 0.931, 1.468)
+size = Vector3(0.61, 0.554, 0.464)
+material = SubResource("StandardMaterial3D_0a1fw")
+
+[node name="Staff" type="CSGCombiner3D" parent="Skin/Right Hand"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Skin/Right Hand/Staff"]
+transform = Transform3D(1, 0, 0, 0, 0.577117, -0.816662, 0, 0.816662, 0.577117, 0.15274, 0.9521, 1.29115)
+size = Vector3(1.94318, 0.284546, 0.359497)
+material = SubResource("StandardMaterial3D_1yb5s")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Skin/Right Hand/Staff"]
+transform = Transform3D(1, 0, 0, 0, 0.577117, -0.816662, 0, 0.816662, 0.577117, 1.30118, 1.08299, 1.19865)
+size = Vector3(1.43474, 0.284546, 0.30135)
+material = SubResource("StandardMaterial3D_1yb5s")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Skin/Right Hand/Staff"]
+transform = Transform3D(1, 0, 0, 0, 0.577117, -0.816662, 0, 0.816662, 0.577117, 2.0368, 1.01395, 1.24744)
+size = Vector3(0.440472, 0.284546, 0.579244)
+material = SubResource("StandardMaterial3D_1yb5s")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Skin/Right Hand/Staff"]
+transform = Transform3D(1, 0, 0, 0, 0.577117, -0.816662, 0, 0.816662, 0.577117, 1.72316, 0.944868, 1.29989)
+size = Vector3(0.440472, 0.513916, 0.455767)
+material = SubResource("StandardMaterial3D_jdefy")
+
+[node name="Left Hand" type="CSGCombiner3D" parent="Skin"]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Skin/Left Hand"]
+transform = Transform3D(-1, 2.80788e-08, -8.52356e-08, -4.65178e-09, 1.27681, 0.290769, 8.7671e-08, 0.388021, -0.956793, 0, 1.192, -1.212)
+size = Vector3(0.381104, 0.381592, 0.464355)
+material = SubResource("StandardMaterial3D_vjgsk")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Skin/Left Hand"]
+transform = Transform3D(-1, 2.80788e-08, -8.52356e-08, -4.65178e-09, 1.27681, 0.290769, 8.7671e-08, 0.388021, -0.956793, 0, 0.931, -1.468)
+size = Vector3(0.61, 0.554, 0.464)
+material = SubResource("StandardMaterial3D_mwly5")
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="Attack" parent="Actions" instance=ExtResource("2_yrd1a")]
+
+[node name="Defend" parent="Actions" instance=ExtResource("3_c01r2")]
+
+[node name="Magic" parent="Actions" instance=ExtResource("4_uoai3")]
+_action_name = "Magic"
+_action_ui_color = Color(0.502792, 0.00220179, 0.760637, 1)
+
+[connection signal="_action_done" from="Actions/Attack" to="Actions/Attack" method="_on__action_done"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpfgrbkqti2vp"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_fge3s"]
+[ext_resource type="PackedScene" uid="uid://gtcglow23y35" path="res://actions/attack.tscn" id="2_b5cet"]
+[ext_resource type="PackedScene" uid="uid://dmlj7yu53ob86" path="res://actions/defend.tscn" id="3_si7h4"]
+[ext_resource type="PackedScene" uid="uid://b2inhorjooy02" path="res://actions/charge_attack.tscn" id="4_owcuj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25dsk"]
+albedo_color = Color(0.294467, 0.147, 0.7, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4sbr"]
+albedo_color = Color(1, 0, 0.633333, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjbvp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Bat" type="Node3D"]
+script = ExtResource("1_fge3s")
+_attack = 12
+_defense = 2
+_max_health = 20
+_health = 20
+
+[node name="Skin" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Skin"]
+size = Vector3(1, 1, 1.05)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785843, 0)
+size = Vector3(1.16113, 1, 1.2793)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, -0.708193, 0.275327, 0)
+size = Vector3(1, 0.273682, 0.658203)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -1.57141, 0.275327, 0)
+size = Vector3(1, 0.273682, 0.442383)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(0.987278, -0.158243, -0.0155519, 0.158297, 0.987389, 0.00223406, 0.0150022, -0.00466745, 0.999877, -1.12122, 0.0614229, 0.000856376)
+size = Vector3(1.25894, 0.461487, 0.228271)
+material = SubResource("StandardMaterial3D_g4sbr")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(-0.965926, -0.258819, 8.74228e-08, -0.258819, 0.965926, 0, -8.44439e-08, -2.26267e-08, -1, 0.861749, 0.275327, 0.00057088)
+size = Vector3(1, 0.273682, 0.658203)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(-0.965926, 0.258819, 8.74228e-08, 0.258819, 0.965926, 0, -8.44439e-08, 2.26267e-08, -1, 1.72496, 0.275327, 0.000570955)
+size = Vector3(1, 0.273682, 0.442383)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(-0.987278, 0.158243, 0.015552, 0.158297, 0.987389, 0.00223406, -0.0150023, 0.00466746, -0.999877, 1.27478, 0.033898, -0.00028546)
+size = Vector3(1.25894, 0.461487, 0.228271)
+material = SubResource("StandardMaterial3D_g4sbr")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(0.258819, 0.965926, -3.82137e-15, 0.965926, -0.258819, -8.74228e-08, -8.44439e-08, 2.26267e-08, -1, 0.490179, 1.46352, 0.000570958)
+size = Vector3(1, 0.524048, 0.442383)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(-0.258819, 0.965926, 4.37114e-08, 0.965926, 0.258819, -7.57104e-08, -8.44439e-08, 2.26267e-08, -1, -0.476475, 1.46352, 0.000570958)
+size = Vector3(1, 0.524048, 0.442383)
+material = SubResource("StandardMaterial3D_25dsk")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285689, 0.853413, -0.594842)
+size = Vector3(0.257812, 0.30957, 0.194336)
+material = SubResource("StandardMaterial3D_yjbvp")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.257156, 0.853413, -0.594842)
+size = Vector3(0.257812, 0.30957, 0.194336)
+material = SubResource("StandardMaterial3D_yjbvp")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Skin"]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 0.0314903, 0.624529, -0.594842)
+size = Vector3(0.203125, 0.195312, 0.194336)
+material = SubResource("StandardMaterial3D_yjbvp")
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="Attack" parent="Actions" instance=ExtResource("2_b5cet")]
+
+[node name="Defend" parent="Actions" instance=ExtResource("3_si7h4")]
+
+[node name="ChargeAttack" parent="Actions" instance=ExtResource("4_owcuj")]

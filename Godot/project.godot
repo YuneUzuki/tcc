@@ -11,4 +11,10 @@ config_version=5
 [application]
 
 config/name="TCC"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+
+[autoload]
+
+StateManager="*res://globals/state_manager.tscn"
+TurnManager="*res://globals/turn_manager.tscn"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmlj7yu53ob86"]
+
+[ext_resource type="Script" path="res://actions/defend.gd" id="1_0uhi2"]
+
+[node name="Defend" type="Node"]
+script = ExtResource("1_0uhi2")
+_action_name = "Defend"
+_action_ui_color = Color(0.245499, 0.367301, 0.730332, 1)

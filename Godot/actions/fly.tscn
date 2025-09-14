@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqvfe6f5g0568"]
+
+[ext_resource type="Script" path="res://actions/fly.gd" id="1_6ngbv"]
+
+[node name="Fly" type="Node"]
+script = ExtResource("1_6ngbv")
+_action_name = "Fly"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gtcglow23y35"]
+
+[ext_resource type="Script" path="res://actions/attack.gd" id="1_q5esq"]
+
+[node name="Attack" type="Node"]
+script = ExtResource("1_q5esq")
+_action_name = "Attack"
+_action_ui_color = Color(0.71, 0.0568, 0.241873, 1)

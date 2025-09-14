@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ree1xe7uofci"]
+[gd_scene load_steps=20 format=3 uid="uid://ree1xe7uofci"]
 
 [ext_resource type="Shader" path="res://shaders/water.gdshader" id="1_ig7tw"]
 [ext_resource type="ArrayMesh" uid="uid://cv6u1bqxsvut0" path="res://models/block.obj" id="2_7gflm"]
@@ -9,6 +9,11 @@
 [ext_resource type="ArrayMesh" uid="uid://chbycufdeor7a" path="res://models/ladder.obj" id="7_26n37"]
 [ext_resource type="ArrayMesh" uid="uid://cw00f66pqa15v" path="res://models/flowers-tall.obj" id="8_ukmpv"]
 [ext_resource type="ArrayMesh" uid="uid://boyrsdj5xf6t6" path="res://models/fence-straight.obj" id="9_uoad0"]
+[ext_resource type="Script" path="res://scripts/entities.gd" id="10_3k1f7"]
+[ext_resource type="PackedScene" uid="uid://p5g81uiw0h20" path="res://characters/wizard.tscn" id="10_tjedu"]
+[ext_resource type="PackedScene" uid="uid://ds62avkm7flpn" path="res://characters/pom.tscn" id="12_hcaki"]
+[ext_resource type="PackedScene" uid="uid://dpm25le686pkw" path="res://ui/actions_ui.tscn" id="13_cxqn1"]
+[ext_resource type="PackedScene" uid="uid://dpfgrbkqti2vp" path="res://characters/bat.tscn" id="13_fkt6m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.345098, 0.662745, 1, 1)
@@ -69,7 +74,7 @@ shadow_enabled = true
 mesh = SubResource("CylinderMesh_h2yge")
 
 [node name="Camera3D" type="Camera3D" parent="Environment"]
-transform = Transform3D(0.916348, 0.124708, -0.380466, 0, 0.950256, 0.311471, 0.400383, -0.285415, 0.870765, -1.67322, 4.34383, 3.07029)
+transform = Transform3D(0.916348, 0.124708, -0.380466, 0, 0.950256, 0.311471, 0.400383, -0.285415, 0.870765, -1.83616, 4.47722, 3.44321)
 
 [node name="Background" type="Node" parent="."]
 
@@ -293,3 +298,23 @@ skeleton = NodePath("../../../../Environment")
 transform = Transform3D(0.928265, 0, 0.371919, 0, 1, 0, -0.371919, 0, 0.928265, -2.59652, 2.56657, -4.81875)
 mesh = ExtResource("9_uoad0")
 skeleton = NodePath("../..")
+
+[node name="Entities" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("10_3k1f7")
+
+[node name="Wizard" parent="Entities" instance=ExtResource("10_tjedu")]
+transform = Transform3D(0.901629, 0, -0.432511, 0, 1, 0, 0.432511, 0, 0.901629, -2.60846, 2.52386, 0.426263)
+
+[node name="Pom" parent="Entities" instance=ExtResource("12_hcaki")]
+transform = Transform3D(0.322972, 0, -0.35509, 0, 0.48, 0, 0.35509, 0, 0.322972, 1.22675, 2.84091, -0.184178)
+
+[node name="Pom2" parent="Entities" instance=ExtResource("12_hcaki")]
+transform = Transform3D(0.0337086, 0, -0.478815, 0, 0.48, 0, 0.478815, 0, 0.0337086, 1.56217, 2.88705, 1.22014)
+_entity_id = "pom2"
+
+[node name="Bat" parent="Entities" instance=ExtResource("13_fkt6m")]
+transform = Transform3D(-0.0698811, 0, 0.2608, 0, 0.27, 0, -0.2608, 0, -0.0698811, 1.06902, 3.95471, 0.903906)
+
+[node name="UI" parent="." instance=ExtResource("13_cxqn1")]
+unique_name_in_owner = true
